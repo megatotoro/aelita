@@ -1,0 +1,25 @@
+{% extends 'aelitaapp/base.html' %}
+
+{% block content %}
+<!-- block price -->
+	<div class="row block-price">
+		<div class="col-12">
+				<h2 class="text-center py-3">Цены на услуги стоматологии</h2>
+			  <hr class="h-line text-center" size="5px">
+		</div>
+		<div class="col-3"></div>
+		<div class="col-6">
+			<table class="table table-striped">
+			  <tbody>
+              {% for product in products %}
+			    <tr>
+			      <td>{{ product.name }}</td>
+			      <td>{{ product.price }}</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+		<div class="col-3"></div>
+	</div>
+	<!-- end block price -->
+{% endblock %}

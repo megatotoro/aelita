@@ -1,0 +1,17 @@
+{% extends 'aelitaapp/base.html' %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row doctors">
+			<div class="col-4">
+				<img src="{{ about_doctor.picture.url }}" class="doctors-img">
+			</div>
+			<div class="col-8">
+					<h1 style="color:black;">{{ about_doctor.name }}</h1>
+					<p><small>{{ about_doctor.title }}</small></p>
+					<p>{{ about_doctor.about }}</p>
+			</div>
+	</div>
+</div>
+{% endblock %}

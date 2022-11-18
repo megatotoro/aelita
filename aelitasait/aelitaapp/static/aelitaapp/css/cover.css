@@ -1,0 +1,298 @@
+.container {
+width:2000px;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover{
+  color: black;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.content {
+  flex: 1 0 auto;
+}
+
+.button-color {
+  background: #027383;
+  color: white;
+}
+
+.h-line {
+  color: #027383;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+/*header*/
+.px-3 {
+   margin-top: 25px;
+   color: white;
+}
+
+.header {
+ background: #027383;
+}
+
+.float-md-start a {
+  color:  white;
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+.nav-masthead .nav-link {
+  color:#d3e3e5;
+  border-bottom-color: d3e3e5;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: white;
+}
+
+.nav-masthead .active {
+  color:#d3e3e5;
+  border-bottom-color: d3e3e5;
+}
+
+.button-zapis {
+  color:#525050;
+  padding: 0.5rem 3rem;
+  border-radius: 1.5rem;
+}
+
+.header-phone{
+  color:#d3e3e5;
+  font-size: 1.2em;
+}
+/*header end*/
+
+/*content*/
+.img_news {
+width: 80%;
+}
+
+.one-block {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.block-about {
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.back {
+  background: #F7FAFD;
+  margin-bottom: 50px;
+}
+
+.block-services {
+  margin: 25px;
+  padding:20px;
+  background: #0273830d;
+  border:1px solid #02738324;
+
+}
+
+.block-services a {
+  color: black;
+}
+
+.block-services a:hover{
+  color: #027383;
+}
+
+.block-services :hover{
+  background: #02738321;
+}
+
+.about-h {
+  color: black;
+}
+
+.line-about{
+  width: 200px;
+  color: #027383;
+}
+
+.about-clinik {
+  margin-top: 20px;
+}
+
+/*str price*/
+
+.block-price {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.block-price  h2 {
+  color: black;
+}
+.form-control {
+   border: none;
+   border-radius: 0;
+}
+
+.input-border {
+  border-bottom: 1px solid #027383;
+}
+
+.block-exempl {
+  height: 30px;
+}
+
+textarea {
+  border: 1px solid #027383 !important;
+}
+
+.price-block-nap {
+  background: #027383;
+  font-weight: bold;
+  height: 150px;
+  margin:10px;
+  word-wrap: break-word;
+  padding-top:10px;
+  padding-left:10px;
+}
+
+.price-block-nap a {
+  color: white;
+}
+
+.price-block-nap a:hover{
+  color:#ffffff59;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    --bs-table-accent-bg: #d9e1e9;
+}
+/*str price end*/
+
+/* str doctors */
+.doctors {
+  color: black;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.card-h {
+    height:300px;
+}
+
+.doctors-line {
+  color: #027383;
+}
+.doctors-img {
+  width: 70%;
+}
+
+.button-doctors{
+  color: white;
+  background-color: #027383;
+  border-color: #027383;
+}
+
+.button-doctors:hover{
+  color: white;
+  background: #02738391;
+}
+
+/* end str doctors */
+
+/*footer*/
+footer {
+  background: #027383;
+}
+.footer-block {
+  padding-top:  30px;
+}
+.footer {
+  margin-top: 50px;
+  flex: 0 0 auto;
+}
+
+.link-footer {
+  color: white;
+}
+
+.link-footer:hover {
+  color: white;
+}
+
+iframe{
+  width: 100%;
+}
+/*footer end*/
+
+.bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }

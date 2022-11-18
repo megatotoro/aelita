@@ -1,0 +1,219 @@
+{% load static %}
+<!doctype html>
+<html lang="ru" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Аэлита</title>
+	<link rel="shortcut icon" href="{% static 'aelitaapp/images/logo.png' %}" type="image/png">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{% static 'aelitaapp/css/cover.css' %}">
+    <style>
+    	h1,h2,h3,h4,h5 {
+			  color: white;
+			}
+    </style>
+  </head>
+<body>
+<div class="wrapper">
+	<div class="content">
+			<!-- header -->
+		  <div  class="d-flex h-100 text-center text-bg-dark header">
+			<div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+			  <header class="mb-auto">
+				<div class="row">
+					<div class="col-7">
+					  <nav class="nav nav-masthead">
+						<a class="nav-link fw-bold py-1 px-4" href="{% url 'index' %}">Главная</a>
+						<a class="nav-link fw-bold py-1 px-4" href="">Ортопедия</a>
+						<a class="nav-link fw-bold py-1 px-4" href="{% url 'prices' %}">Услуги</a>
+						<a class="nav-link fw-bold py-1 px-4" href="{% url 'doctors' %}">Врачи</a>
+						<a class="nav-link fw-bold py-1 px-4" href="https://2gis.ru/abakan/firm/9711414977502199/tab/reviews?m=91.440904%2C53.72662%2F16">Отзывы</a>
+						<a class="nav-link fw-bold py-1 px-4" href="{% url 'contacts' %}">Контакты</a>
+					  </nav>
+					</div>
+				<div class="col">
+					<p class= "mb-0 fw-bold d-flex justify-content-end header-phone">тел: 8 (3902) 35-87-80, 26-40-75</p></div>
+				</div>
+			  </header>
+
+			  <main class="px-3">
+				<img src="{% static 'aelitaapp/images/karies.png' %}" width="50">
+				<h1>Аэлита</h1>
+				<!--<img src="../assets/image/logo.png" class="text-center" width="40px">-->
+				<p class="lead fw-bold" style= "color: #d3e3e5;">Центр современной стоматологии</p>
+				<p class="lead">
+				  <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white button-zapis" data-bs-toggle="modal" data-bs-target="#GoModal">Записаться</a>
+				</p>
+			  </main>
+			</div>
+		 </div>
+		 <!-- header end -->
+
+		 <!-- block services -->
+		 <div class="container text-center ">
+		  <div class="row justify-content-md-center one-block">
+			<h1 class="about-h my-2">Предоставляем услуги специалистов</h1>
+			  {% for cat in category %}
+			<div class="col block-services">
+				<p class="fw-bold"><a href="{% url 'price' cat.pk %}">{{ cat.name }}</a></p>
+			</div>
+			  {% endfor %}
+		  </div>
+		</div>
+		<!-- end block services -->
+
+		<!-- block about-->
+		<div class="container block-about">
+			<div class="row">
+				<div class="row g-0 about-clinik">
+						<div class="col-sm-6 col-xs-12 text-center">
+							<img src="{% static 'aelitaapp/images/clinika.jpg' %}" class="img_news">
+						</div>
+						<div class="col">
+						<div class="card-body">
+							<h1 class="card-title about-h">О клинике</h1>
+							<hr class="line-about" size="5px">
+							<p class="card-text">Более 16 лет опыта работы.
+							Более 20 000 довольных клиентов.
+							Коллектив клиники состоит из высококвалифицированных специалистов.
+							Лечение производится на самом современном оборудовании.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end block about-->
+
+		<!-- block plus -->
+		<div class="container-fluid block-about back">
+			<div class="container">
+					<div class="row">
+						<div class="col-12"><h1 class="card-title about-h">Преимущества</h1>
+						<hr class="line-about" size="5px"></div>
+							<div class="col-4 d-none d-sm-block">
+								<img src="https://thumb.tildacdn.com/tild6635-3633-4832-a261-626530633261/-/cover/560x420/center/center/-/format/webp/DSC03122_1.jpg" width="100%">
+							</div>
+							<div class="col-sm-7 col-xs-12 py-4 text-start">
+								<h3 class="about-h">Приемленные цены</h3>
+								<p>С другой стороны сложившаяся структура организации<br> обеспечивает широкому кругу (специалистов) участие в формировании<br> систем массового участия. Равным образом постоянный <br>количественный рост и сфера нашей активности обеспечивает <br>широкому кругу (специалистов) участие в формировании <br>соответствующий условий активизации. </p>
+							</div>
+							<div class="col-12 d-none d-sm-block block-exempl"></div>
+
+							<div class="col-sm-7 col-xs-12 py-4 text-end">
+								<h3 class="about-h">Профессиональные врачи</h3>
+								<p>Прием ведут врачи высокого профессионального уровня,<br> имеющие достойный опыт работы</p>
+							</div>
+							<div class="col-4 d-none d-sm-block">
+								<img src="https://thumb.tildacdn.com/tild6635-3633-4832-a261-626530633261/-/cover/560x420/center/center/-/format/webp/DSC03122_1.jpg" width="100%">
+							</div>
+							<div class="col-12 d-none d-sm-block block-exempl"></div>
+		 j
+							<div class="col-4 d-none d-sm-block">
+								<img src="https://thumb.tildacdn.com/tild6635-3633-4832-a261-626530633261/-/cover/560x420/center/center/-/format/webp/DSC03122_1.jpg" width="100%">
+							</div>
+							<div class="col-sm-7 col-xs-12 py-4 text-start">
+								<h3 class="about-h">Гарантия качества</h3>
+								<p>Мы применяем в своей работе<br>  только сертифицированные технологии лечения</p>
+							</div>
+				  </div>
+			</div>
+
+		</div>
+		<!-- end block plus -->
+
+		<!-- block contacts -->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-xs-12">
+					<script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":500,"height":400,"borderColor":"#a3a3a3","pos":{"lat":53.72723633874442,"lon":91.43755674362184,"zoom":16},"opt":{"city":"abakan"},"org":[{"id":"9711414977502199"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+				</div>
+				<div class="col">
+					<h1 class="card-title about-h">Контакты</h1>
+							<hr class="line-about" size="5px">
+					<h3>Стоматологическая клиника "Аэлита"</h3>
+					<p><b>адрес:</b> г.Абакан, ул.Богдана Хмельницкого, 152 пом.54Н</p>
+					<p><b>тел:</b> 8 (3902) 35-87-80, 26-40-75</p>
+					<p><b>e-mail:</b> oooaelita@mail.ru</p>
+					<p class="fw-bold">Режим работы:</p>
+					<p>Пн. - Пт.</p>
+					<p>09:00 - 18:00</p>
+					<p><b>Выходной:</b> Сб. и Вс.</p>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- end block contacts -->
+		<!-- modal -->
+		<div class="modal fade" id="GoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Записаться</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <div class="modal-body">
+				   <form>
+							<div class="mb-3">
+								<label for="fio" class="form-label">ФИО</label>
+								<input class="form-control input-border" type="text" id="fio" required>
+							</div>
+							<div class="mb-3">
+								<label for="phone" class="form-label">Номер телефона</label>
+								<input class="form-control input-border" type="phone" id="phone" required>
+							</div>
+							<div class="mb-3">
+								<label for="date" class="form-label">Дата</label>
+								<input type="date" class="form-control input-border" id="date" name="date" placeholder="Дата" required>
+							</div>
+							<div class="mb-3">
+							  <label for="comments" class="form-label">Комментарий</label>
+							  <textarea class="form-control" id="comments" rows="2"></textarea>
+							</div>
+							<div class="mb-3 form-check">
+								<input type="checkbox" class="form-check-input" id="checkok" required>
+								<label class="form-check-label" for="checkok">Я согласен с <a href="http://стомаэлита.рф/политика-конфиденциальности.html" style="color:black;">политикой конфиденциальности</a></label>
+							</div>
+							<button type="submit" class="btn button-color">Записаться</button>
+						</form>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<!-- end modal -->
+	</div>
+
+ <!-- footer -->
+<footer class="mt-auto text-white-50">
+	<div class="container footer">
+		<div class="row">
+			<div class="col-12 footer-block"></div>
+			<div class="col-8">
+				<nav class="nav justify-content-center ">
+					<a class="link-footer nav-link" href=""><img src="{% static 'aelitaapp/images/watsap.png' %}" width="50"></a>
+					<a class="link-footer nav-link" href=""><img src="{% static 'aelitaapp/images/inst.png' %}" width="50"></a>
+					<a class="link-footer nav-link" href=""><img src="{% static 'aelitaapp/images/telega.png' %}" width="50"></a>
+				</nav>
+			</div>
+			<div class="col link-footer">
+				<p>г.Абакан, ул.Богдана Хмельницкого, 152 пом.54Н</p>
+				<p>тел: 8 (3902) 35-87-80, 26-40-75</p>
+				<p>e-mail: oooaelita@mail.ru</p>
+			</div>
+		</div>
+	</div>
+</footer>
+</div>
+<!-- end footer -->
+ </body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</html>

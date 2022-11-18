@@ -1,0 +1,64 @@
+{% extends 'aelitaapp/base.html' %}
+
+{% block content %}
+
+<!-- block contacts -->
+<div class="container">
+	<div class="row">
+			<div class="col-12">
+				<h2 class="text-center py-3">Контакты</h2>
+			  <hr class="h-line text-center" size="5px">
+		</div>
+		<div class="col-sm-6 col-xs-12">
+	     	<script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":500,"height":400,"borderColor":"#a3a3a3","pos":{"lat":53.72723633874442,"lon":91.43755674362184,"zoom":16},"opt":{"city":"abakan"},"org":[{"id":"9711414977502199"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+		</div>
+		<div class="col">
+			<h3>Стоматологическая клиника "Аэлита"</h3>
+			<p><b>адрес:</b> г.Абакан, ул.Богдана Хмельницкого, 152 пом.54Н</p>
+			<p><b>тел:</b> 8 (3902) 35-87-80, 26-40-75</p>
+			<p><b>e-mail:</b> oooaelita@mail.ru</p>
+			<p class="fw-bold">Режим работы:</p>
+			<p>Пн. - Пт.</p>
+			<p>09:00 - 18:00</p>
+			<p><b>Выходной:</b> Сб. и Вс.</p>
+		</div>
+	
+	</div>
+</div>
+
+<!-- end block contacts -->
+<!-- zapis -->
+<div class="container" style="margin-top:20px;">
+	<div class="row">
+		<div class="col-3"></div>
+		<div class="col-6">
+			<form>
+				<div class="mb-3">
+					<label for="fio" class="form-label">ФИО</label>
+					<input class="form-control input-border " type="text" id="fio" required>
+				</div>
+				<div class="mb-3">
+					<label for="phone" class="form-label">Номер телефона</label>
+					<input class="form-control input-border" type="phone" id="phone" required>
+				</div>
+				<div class="mb-3">
+					<label for="date" class="form-label">Дата</label>
+					<input type="date" class="form-control input-border" id="date" name="date" placeholder="Дата" required>
+				</div>
+				<div class="mb-3">
+				  <label for="comments" class="form-label">Комментарий</label>
+				  <textarea class="form-control" id="comments" rows="2"></textarea>
+				</div>
+				<div class="mb-3 form-check">
+				    <input type="checkbox" class="form-check-input" id="checkok" required>
+				    <label class="form-check-label" for="checkok">Я согласен с <a href="http://стомаэлита.рф/политика-конфиденциальности.html" style="color:black;">политикой конфиденциальности</a></label>
+				</div>
+			    <button type="submit" class="btn button-color">Записаться</button>
+			</form>
+		</div>
+		<div class="col-3"></div>
+		<div class="col-12 block-exempl"></div>
+	</div>
+</div>
+	<!-- end zapis -->
+{% endblock %}

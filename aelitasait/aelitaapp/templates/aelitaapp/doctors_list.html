@@ -1,0 +1,29 @@
+{% extends 'aelitaapp/base.html' %}
+
+{% block content %}
+<div class="container">
+	<div class="row doctors">
+			<div class="col-12">
+				<h2 class="text-center py-3">Наши сотрудники</h2>
+			  <hr class="h-line text-center" size="5px">
+			</div>
+			{% if doctors %}
+				{% for doctor in doctors %}
+			   <div class="col-sm-3 col-xs-12 ">
+		      		<div class="card">
+						  <img src="{{ doctor.picture.url }}" class="card-img-top" alt="{{ doctor.name }}">
+						  <div class="card-body">
+							    <h4 class="card-title">{{ doctor.name }}</h4>
+								<p class="card-text">{{ doctor.title }}</p>
+								<a href="{{ doctor.id }}" class="btn button-doctors">Подробнеe</a>
+						  </div>
+					</div>
+		    	</div>
+					{% if forloop.counter == 4 %}
+						 <div class="col-12 block-exempl"></div>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+	</div>
+</div>
+{% endblock %}
