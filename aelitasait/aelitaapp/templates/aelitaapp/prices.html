@@ -1,5 +1,7 @@
 {% extends 'aelitaapp/base.html' %}
 
+{% block title %} Цены на услуги стоматологии {% endblock %}
+
 {% block content %}
 <div class="container">
 	<!-- block price -->
@@ -9,16 +11,18 @@
 			  <hr class="h-line text-center" size="5px">
 		</div>
 		<div class="col-2"></div>
-		<div class="col-sm-2 col-xs-12 price-block-nap"><h5><a href="price.html">Лечение кариеса</a></h5></div>
-		<div class="col-sm-2 col-xs-12 price-block-nap"><h5><a href="price.html">Эндодонтия</a></h5></div>
-		<div class="col-sm-2 col-xs-12 price-block-nap"><h5><a href="price.html">Лечение тканей пародонта</a></h5></div>
-		<div class="col-2"></div>
-
-		<div class="col-2"></div>
-		<div class="col-sm-2 col-xs-12 price-block-nap"><h5><a href="">Ортопедическое лечение</a></h5></div>
-		<div class="col-sm-5 col-xs-12 price-block-nap"><h5><a href="">Прочие услуги</a></h5></div>
-		<div class="col-2"></div>
-
+		{% for category in cat %}
+			{% if forloop.counter == 5 %}
+				<div class="col-sm-5 col-xs-12 price-block-nap"><h5><a href="{% url 'price' category.pk %}">{{ category.name }} <span>&rarr;</span></a></h5></div>
+			{% else %}
+				<div class="col-sm-2 col-xs-12 price-block-nap"><h5><a href="{% url 'price' category.pk %}">{{ category.name }} <span>&rarr;</span></a></h5></div>
+			{% endif %}
+			{% if forloop.counter == 3 %}
+			<div class="col-2"></div>
+			<div class="col-2"></div>
+			{% endif %}
+		{% endfor %}
+			<div class="col-2"></div>
 	</div>
 	<!-- end block price -->
 

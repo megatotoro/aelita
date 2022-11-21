@@ -1,14 +1,18 @@
 {% extends 'aelitaapp/base.html' %}
 
+{% block title %} {{ name_cat }} {% endblock %}
+
 {% block content %}
+<div class="container">
 <!-- block price -->
 	<div class="row block-price">
 		<div class="col-12">
-				<h2 class="text-center py-3">Цены на услуги стоматологии</h2>
+				<h2 class="text-center py-3">{{ name_cat }}</h2>
 			  <hr class="h-line text-center" size="5px">
 		</div>
 		<div class="col-3"></div>
 		<div class="col-6">
+			{% if products %}
 			<table class="table table-striped">
 			  <tbody>
               {% for product in products %}
@@ -16,10 +20,15 @@
 			      <td>{{ product.name }}</td>
 			      <td>{{ product.price }}</td>
 			    </tr>
+			  {% endfor %}
 			  </tbody>
 			</table>
+			{% else %}
+			<h5>Записей нет</h5>
+			{% endif %}
 		</div>
 		<div class="col-3"></div>
 	</div>
 	<!-- end block price -->
+</div>
 {% endblock %}

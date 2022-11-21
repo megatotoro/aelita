@@ -12,6 +12,11 @@ html,
 body {
   height: 100%;
 }
+
+span {
+color: white;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -19,6 +24,7 @@ body {
 }
 .content {
   flex: 1 0 auto;
+  margin-bottom: 50px;
 }
 
 .button-color {
@@ -112,7 +118,6 @@ width: 80%;
   padding:20px;
   background: #0273830d;
   border:1px solid #02738324;
-
 }
 
 .block-services a {
@@ -121,10 +126,6 @@ width: 80%;
 
 .block-services a:hover{
   color: #027383;
-}
-
-.block-services :hover{
-  background: #02738321;
 }
 
 .about-h {

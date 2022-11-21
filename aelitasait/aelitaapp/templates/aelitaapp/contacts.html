@@ -1,7 +1,8 @@
 {% extends 'aelitaapp/base.html' %}
 
-{% block content %}
+{% block title %} Контакты {% endblock %}
 
+{% block content %}
 <!-- block contacts -->
 <div class="container">
 	<div class="row">
@@ -27,8 +28,17 @@
 </div>
 
 <!-- end block contacts -->
+ <div id="form_container">
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-actions form-group ">
+          <button type="submit" class="form-control btn btn-success">Отправить</button>
+        </div>
+      </form>
+ </div>
 <!-- zapis -->
-<div class="container" style="margin-top:20px;">
+<!--<div class="container" style="margin-top:20px;">
 	<div class="row">
 		<div class="col-3"></div>
 		<div class="col-6">
@@ -59,6 +69,6 @@
 		<div class="col-3"></div>
 		<div class="col-12 block-exempl"></div>
 	</div>
-</div>
+</div> -->
 	<!-- end zapis -->
 {% endblock %}

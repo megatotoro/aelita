@@ -40,4 +40,3 @@ class Categorys (models.Model):
         db_table = 'categorys'
         verbose_name = "Категории"
         verbose_name_plural = "Категории"
-        ordering = ['name']
