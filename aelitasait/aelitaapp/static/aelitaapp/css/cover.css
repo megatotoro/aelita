@@ -1,6 +1,3 @@
-.container {
-width:2000px;
-}
 
 a {
   text-decoration: none;
@@ -15,6 +12,41 @@ body {
 
 span {
 color: white;
+}
+
+input, select {
+   border: none;
+   border-radius: 0;
+}
+select {
+    border-bottom: 1px solid #027383;
+    width:100px;
+    margin-right: 10px;
+}
+
+input {
+  border-bottom: 1px solid #027383;
+  width:100%;
+}
+
+input:hover {
+ border: none;
+   border-radius: 0;
+ border-bottom: 1px solid #027383;
+}
+
+textarea {
+ height:100px;
+ width: 100%;
+}
+
+label {
+margin-bottom:0.5em;
+}
+
+button:hover{
+background: #027383ab;
+color:white !important;
 }
 
 .wrapper {
@@ -150,14 +182,6 @@ width: 80%;
 
 .block-price  h2 {
   color: black;
-}
-.form-control {
-   border: none;
-   border-radius: 0;
-}
-
-.input-border {
-  border-bottom: 1px solid #027383;
 }
 
 .block-exempl {

@@ -19,11 +19,12 @@ def contacts(request):
         # если метод POST, проверим форму и отправим письмо
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = form.cleaned_data['subject']
-            from_email = form.cleaned_data['from_email']
+            name = form.cleaned_data['name']
+            number = form.cleaned_data['number']
+            date = form.cleaned_data['date']
             message = form.cleaned_data['message']
             try:
-                send_mail(f'{subject} от {from_email}', message,
+                send_mail(f'{name} от {number}', message,
                           'k1rsanova.tan@yandex.ru', ['k1rsanova.tan@yandex.ru'])
             except BadHeaderError:
                 return HttpResponse('Ошибка в теме письма.')
@@ -31,6 +32,9 @@ def contacts(request):
     else:
         return HttpResponse('Неверный запрос.')
     return render(request, "aelitaapp/contacts.html", {'form': form})
+
+
+
 
 
 def success_view(request):

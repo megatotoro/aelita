@@ -28,47 +28,37 @@
 </div>
 
 <!-- end block contacts -->
- <div id="form_container">
-      <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div class="form-actions form-group ">
-          <button type="submit" class="form-control btn btn-success">Отправить</button>
-        </div>
-      </form>
- </div>
+
 <!-- zapis -->
-<!--<div class="container" style="margin-top:20px;">
+<div class="container" style="margin-top:20px;">
 	<div class="row">
 		<div class="col-3"></div>
 		<div class="col-6">
-			<form>
+			<form method="POST" novalidate>
+			 {% csrf_token %}
+			 {% for field in form %}
 				<div class="mb-3">
-					<label for="fio" class="form-label">ФИО</label>
-					<input class="form-control input-border " type="text" id="fio" required>
+					  {{field.label_tag}}
+					  {{field}}
+					 <!-- <div class="error">{{field.errors}}</div> -->
 				</div>
-				<div class="mb-3">
-					<label for="phone" class="form-label">Номер телефона</label>
-					<input class="form-control input-border" type="phone" id="phone" required>
-				</div>
-				<div class="mb-3">
-					<label for="date" class="form-label">Дата</label>
-					<input type="date" class="form-control input-border" id="date" name="date" placeholder="Дата" required>
-				</div>
-				<div class="mb-3">
-				  <label for="comments" class="form-label">Комментарий</label>
-				  <textarea class="form-control" id="comments" rows="2"></textarea>
-				</div>
+			{% endfor %}
 				<div class="mb-3 form-check">
-				    <input type="checkbox" class="form-check-input" id="checkok" required>
-				    <label class="form-check-label" for="checkok">Я согласен с <a href="http://стомаэлита.рф/политика-конфиденциальности.html" style="color:black;">политикой конфиденциальности</a></label>
+				    <label class="form-check-label">Нажимая на кнопку Вы автоматически соглашаетесь с <a href="http://стомаэлита.рф/политика-конфиденциальности.html" style="color:black;">политикой конфиденциальности</a></label>
 				</div>
-			    <button type="submit" class="btn button-color">Записаться</button>
+				 <button type="submit" class="btn button-color">Записаться</button>
 			</form>
 		</div>
 		<div class="col-3"></div>
 		<div class="col-12 block-exempl"></div>
 	</div>
-</div> -->
-	<!-- end zapis -->
+</div>
+ <!-- end zapis -->
+<!--
+<div class="mb-3">
+					<label for="date" class="form-label">Дата</label>
+					<input type="date" class="form-control input-border" id="date" name="date" placeholder="Дата" required>
+				</div>
+				-->
+
 {% endblock %}
