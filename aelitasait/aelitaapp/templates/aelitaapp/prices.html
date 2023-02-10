@@ -13,9 +13,9 @@
 		<div class="col-2"></div>
 		{% for category in cat %}
 			{% if forloop.counter == 5 %}
-				<div class="col-sm-5 col-xs-12 price-block-nap"><h5><a href="{% url 'price' category.pk %}">{{ category.name }} <span>&rarr;</span></a></h5></div>
+				<div class="col-sm-5 col-xs-12 price-block-nap"><h5><a href="{{ category.get_absolute_url }}">{{ category.name }} <span>&rarr;</span></a></h5></div>
 			{% else %}
-				<div class="col-sm-2 col-xs-12 price-block-nap"><h5><a href="{% url 'price' category.pk %}">{{ category.name }} <span>&rarr;</span></a></h5></div>
+				<div class="col-sm-2 col-xs-12 price-block-nap"><h5><a href="{{ category.get_absolute_url }}">{{ category.name }} <span>&rarr;</span></a></h5></div>
 			{% endif %}
 			{% if forloop.counter == 3 %}
 			<div class="col-2"></div>

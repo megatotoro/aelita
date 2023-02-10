@@ -63,7 +63,7 @@
 			<h1 class="about-h my-2">Предоставляем услуги специалистов</h1>
 			  {% for cat in category %}
 			<div class="col block-services">
-				<p class="fw-bold"><a href="{% url 'price' cat.pk %}">{{ cat.name }}</a></p>
+				<p class="fw-bold"><a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a></p>
 			</div>
 			  {% endfor %}
 		  </div>

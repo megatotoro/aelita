@@ -20,19 +20,28 @@ input, select {
 }
 select {
     border-bottom: 1px solid #027383;
-    width:100px;
+    width:70%;
     margin-right: 10px;
 }
-
+/*
 input {
   border-bottom: 1px solid #027383;
   width:100%;
-}
+}*/
 
-input:hover {
+/*input:hover {
  border: none;
    border-radius: 0;
  border-bottom: 1px solid #027383;
+}*/
+
+.input-border {
+  border-bottom: 1px solid #027383;
+}
+
+.form-control {
+   border: none;
+   border-radius: 0;
 }
 
 textarea {
@@ -190,6 +199,22 @@ width: 80%;
 
 textarea {
   border: 1px solid #027383 !important;
+}
+
+input[type=checkbox] {
+    border: 1px solid #027383;
+}
+
+input:focus {
+    border:none !important;
+}
+
+input:active {
+    border:none !important;
+}
+
+.input-border {
+  border-bottom: 1px solid #027383;
 }
 
 .price-block-nap {

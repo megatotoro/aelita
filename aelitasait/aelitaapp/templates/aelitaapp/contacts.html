@@ -34,18 +34,18 @@
 	<div class="row">
 		<div class="col-3"></div>
 		<div class="col-6">
-			<form method="POST" novalidate>
-			 {% csrf_token %}
-			 {% for field in form %}
+			<form action="{% url 'contacts' %}" method="POST">
+				{% csrf_token %} <!-- защита от копирования формы -->
+				{{ form.as_p }}
+			<!-- {% for field in form %}
 				<div class="mb-3">
 					  {{field.label_tag}}
-					  {{field}}
-					 <!-- <div class="error">{{field.errors}}</div> -->
+
 				</div>
-			{% endfor %}
-				<div class="mb-3 form-check">
+			{% endfor %} -->
+				<!--<div class="mb-3 form-check">
 				    <label class="form-check-label">Нажимая на кнопку Вы автоматически соглашаетесь с <a href="http://стомаэлита.рф/политика-конфиденциальности.html" style="color:black;">политикой конфиденциальности</a></label>
-				</div>
+				</div>-->
 				 <button type="submit" class="btn button-color">Записаться</button>
 			</form>
 		</div>
