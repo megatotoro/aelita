@@ -36,6 +36,7 @@ def price(request, price_slug):
     price_cat = Price.objects.filter(id_cat=name_cat.pk)
     context = {'products': price_cat, 'name_cat': name_cat}
     return render(request, 'aelitaapp/price.html', context)
+    allow_empty = False #вызывает 404 если категории не существует
 
 
 def prices(request):
