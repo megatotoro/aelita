@@ -119,7 +119,6 @@
 								<img src="{% static 'aelitaapp/images/fon_two.jpg' %}" width="100%">
 							</div>
 							<div class="col-12 d-none d-sm-block block-exempl"></div>
-		 j
 							<div class="col-4 d-none d-sm-block">
 								<img src="{% static 'aelitaapp/images/fon_three.jpg' %}" width="100%">
 							</div>
@@ -167,29 +166,11 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			  </div>
 			  <div class="modal-body">
-				   <form>
-							<div class="mb-3">
-								<label for="fio" class="form-label">ФИО</label>
-								<input class="form-control input-border" type="text" id="fio" required>
-							</div>
-							<div class="mb-3">
-								<label for="phone" class="form-label">Номер телефона</label>
-								<input class="form-control input-border" type="phone" id="phone" required>
-							</div>
-							<div class="mb-3">
-								<label for="date" class="form-label">Дата</label>
-								<input type="date" class="form-control input-border" id="date" name="date" placeholder="Дата" required>
-							</div>
-							<div class="mb-3">
-							  <label for="comments" class="form-label">Комментарий</label>
-							  <textarea class="form-control" id="comments" rows="2"></textarea>
-							</div>
-							<div class="mb-3 form-check">
-								<input type="checkbox" class="form-check-input" id="checkok" required>
-								<label class="form-check-label" for="checkok">Я согласен с <a href="http://стомаэлита.рф/политика-конфиденциальности.html" style="color:black;">политикой конфиденциальности</a></label>
-							</div>
-							<button type="submit" class="btn button-color">Записаться</button>
-						</form>
+				  <form action="{% url 'contacts' %}" method="POST">
+						{% csrf_token %} <!-- защита от копирования формы -->
+						{{ form.as_p }}
+						 <button type="submit" class="btn button-color">Записаться</button>
+				  </form>
 			  </div>
 			</div>
 		  </div>

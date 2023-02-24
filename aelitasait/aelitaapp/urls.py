@@ -10,4 +10,5 @@ urlpatterns = [
     path('success/', success_view, name='success'),
     path('ortopedia/', ortopedia, name='ortopedia'),
     path('doctors/<slug:slug>', DoctorDetailView.as_view(), name='doctor-detail'),
+    path('success/', success_view,name='success' )
 ]

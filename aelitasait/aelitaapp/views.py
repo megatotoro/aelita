@@ -10,21 +10,62 @@ from .models import *
 
 def index(request):
     cat = Categorys.objects.all()
-    return render(request, 'aelitaapp/index.html', {'category': cat})
+    # если метод GET, вернем форму
+    if request.method == 'GET':
+        form = ContactForm()
+    elif request.method == 'POST':
+        # если метод POST, проверим форму и отправим письмо
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            number = form.cleaned_data['number']
+            doctor = form.cleaned_data['doctor']
+            message = form.cleaned_data['message']
+            message_post = 'врач {doctor} сообщение {message}'
+            try:
+                send_mail(f'{name} от {number}', message_post,
+                          'k1rsanova.tan@yandex.ru', ['k1rsanova.tan@yandex.ru'])
+            except BadHeaderError:
+                return HttpResponse('Ошибка в теме письма.')
+            return redirect('success')
+    else:
+        return HttpResponse('Неверный запрос.')
+    return render(request, 'aelitaapp/index.html', {'category': cat, 'form':form})
 
 
 def contacts(request):
-    if request.method == 'POST':
+    # если метод GET, вернем форму
+    if request.method == 'GET':
+        form = ContactForm()
+    elif request.method == 'POST':
+        # если метод POST, проверим форму и отправим письмо
         form = ContactForm(request.POST)
         if form.is_valid():
-            print(form.cleaned_data)
+            name = form.cleaned_data['name']
+            number = form.cleaned_data['number']
+            #doctor = form.cleaned_data['doctor']
+            message_post = 'врач {doctor} сообщение {message}'
+            try:
+                send_mail(f'{name} от {number}', message_post,
+                          'k1rsanova.tan@yandex.ru', ['k1rsanova.tan@yandex.ru'])
+            except BadHeaderError:
+                return HttpResponse('Ошибка в теме письма.')
+            return redirect('success')
     else:
-        form = ContactForm
-    return render(request, 'aelitaapp/contacts.html', {'form': form})
+        return HttpResponse('Неверный запрос.')
+    return render(request, "aelitaapp/contacts.html", {'form': form})
+
+    #if request.method == 'POST':
+    #    form = ContactForm(request.POST)
+    #   if form.is_valid():
+    #        print(form.cleaned_data)
+    # else:
+    #    form = ContactForm
+    #return render(request, 'aelitaapp/contacts.html', {'form': form})
 
 
 def success_view(request):
-    return HttpResponse('Приняли! Спасибо за вашу заявку.')
+    return render(request, 'aelitaapp/success.html')
 
 
 def ortopedia(request):
@@ -41,7 +82,26 @@ def price(request, price_slug):
 
 def prices(request):
     cat = Categorys.objects.all()
-    return render(request, 'aelitaapp/prices.html', {'cat': cat})
+    # если метод GET, вернем форму
+    if request.method == 'GET':
+        form = ContactForm()
+    elif request.method == 'POST':
+        # если метод POST, проверим форму и отправим письмо
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            number = form.cleaned_data['number']
+            # doctor = form.cleaned_data['doctor']
+            message_post = 'врач {doctor} сообщение {message}'
+            try:
+                send_mail(f'{name} от {number}', message_post,
+                          'k1rsanova.tan@yandex.ru', ['k1rsanova.tan@yandex.ru'])
+            except BadHeaderError:
+                return HttpResponse('Ошибка в теме письма.')
+            return redirect('success')
+    else:
+        return HttpResponse('Неверный запрос.')
+    return render(request, 'aelitaapp/prices.html', {'cat': cat, 'form':form})
 
 
 class DoctorsListView(generic.ListView):
