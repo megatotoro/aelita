@@ -1,0 +1,17 @@
+#header {
+ background: #027383;
+}
+
+#branding h1 {
+color: white !important;
+font-size: 2.5rem;
+}
+h1 a:visited {
+color: white !important;
+}
+
+#module caption{
+color: white;
+background: #027383;
+font-size: 1.2rem;
+}
