@@ -1,13 +1,15 @@
-from django.shortcuts import render
+from django.views.decorators.cache import cache_page
 from django.views import generic
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 
+
 from .models import *
 
 
+@cache_page(60*2)
 def index(request):
     cat = Categorys.objects.all()
     # если метод GET, вернем форму
@@ -32,7 +34,7 @@ def index(request):
         return HttpResponse('Неверный запрос.')
     return render(request, 'aelitaapp/index.html', {'category': cat, 'form':form})
 
-
+@cache_page(60*2)
 def contacts(request):
     # если метод GET, вернем форму
     if request.method == 'GET':
@@ -72,6 +74,8 @@ def ortopedia(request):
     return render(request, 'aelitaapp/ortopedia.html')
 
 
+
+@cache_page(60*2)
 def price(request, price_slug):
     name_cat = Categorys.objects.get(slug=price_slug)
     price_cat = Price.objects.filter(id_cat=name_cat.pk)
@@ -80,6 +84,7 @@ def price(request, price_slug):
     allow_empty = False #вызывает 404 если категории не существует
 
 
+@cache_page(60*2)
 def prices(request):
     cat = Categorys.objects.all()
     # если метод GET, вернем форму
